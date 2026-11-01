@@ -1,0 +1,54 @@
+/**
+ * Styles for Telegram Profile Field (profilefield_telegram).
+ */
+
+.sl-telegram-phone-group {
+    max-width: 460px;
+    position: relative;
+}
+
+.sl-country-btn {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    background: var(--smartlearn-input-bg, rgba(255, 255, 255, 0.05));
+    border-color: var(--smartlearn-border-color, #475569) !important;
+    color: inherit !important;
+}
+
+.sl-country-btn:hover,
+.sl-country-btn:focus {
+    background: var(--smartlearn-card-bg-hover, rgba(255, 255, 255, 0.1));
+}
+
+.sl-country-menu {
+    background: var(--smartlearn-card-bg, #1e293b) !important;
+    border: 1px solid var(--smartlearn-border-color, rgba(255, 255, 255, 0.15)) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+.sl-country-item {
+    transition: background-color 0.15s ease;
+    color: inherit !important;
+}
+
+.sl-country-item:hover,
+.sl-country-item:focus {
+    background: var(--smartlearn-card-bg-hover, rgba(255, 255, 255, 0.08)) !important;
+}
+
+.sl-country-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sl-country-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sl-country-list::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+}
+
+.sl-country-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
+}
