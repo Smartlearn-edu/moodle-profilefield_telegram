@@ -54,9 +54,22 @@ class profile_field_telegram extends profile_field_base {
         $defaultcountry = !empty($this->field->defaultdata) ? $this->field->defaultdata : 'EG';
 
         $PAGE->requires->js_call_amd('profilefield_telegram/form', 'init', [
-            'elementId'      => 'id_' . $this->inputname,
-            'defaultCountry' => $defaultcountry,
+            'id_' . $this->inputname,
+            $defaultcountry,
         ]);
+    }
+
+    /**
+     * Set the default value for this field instance in the form.
+     *
+     * @param MoodleQuickForm $mform
+     */
+    public function edit_field_set_default($mform) {
+        if (!empty($this->data)) {
+            $mform->setDefault($this->inputname, $this->data);
+        } else {
+            $mform->setDefault($this->inputname, '');
+        }
     }
 
     /**

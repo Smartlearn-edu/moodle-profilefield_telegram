@@ -124,12 +124,12 @@ define(['core/str'], function(Str) {
         /**
          * Initialize the Telegram phone input widget.
          *
-         * @param {Object} config Configuration object with elementId and defaultCountry.
+         * @param {Object|string} config Configuration object or elementId string.
+         * @param {string} [defaultCountryParam] Fallback default country code when elementId is passed directly.
          */
-        init: function(config) {
-            config = config || {};
-            var elementId = config.elementId;
-            var defaultCountry = config.defaultCountry || 'EG';
+        init: function(config, defaultCountryParam) {
+            var elementId = (typeof config === 'object' && config !== null) ? (config.elementId || config.id) : config;
+            var defaultCountry = (typeof config === 'object' && config !== null) ? (config.defaultCountry || 'EG') : (defaultCountryParam || 'EG');
 
             var phoneInput = document.getElementById(elementId) ||
                              document.querySelector('input[name="' + elementId + '"]');
